@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Learn2Code</title>
+    <meta charset="utf8">
+    <link rel="stylesheet" type="text/css" href="index.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+    <?php
+    $name = $email = $message= $response="";
+    if($_SERVER["REQUEST_METHOD"] == "POST"){
+      $name= test_input($_POST["name"]);
+      $email= test_input($_POST["email"]);
+      $message= test_input($_POST["message"]);
+      $response= "You have successful submiteed";
+      
+       
+    }
+    
+    function test_input($data){
+        $data= trim($data);
+        $data = stripcslashes($data);
+        $data = htmlspecialchars($data);
+        return $data; 
+    }
+    
+    ?>
+
+    <div id="container">
+
+        <!-- page content -->
+        <div id="part1">
+            <!-- header -->
+            <header>
+                <div id="logo" class="col">
+                    <img src="./Images/logo1.png">
+                </div>
+
+                <div id="search" class="col">
+                    <input type="text" placeholder="eg: HTML Quiz 1">
+                    <i class="fa fa-search"></i>
+
+                </div>
+            </header>
+
+            <hr class="style-four">
+            <!-- slideshow -->
+            <!-- w3School https://www.w3schools.com/howto/tryit.asp?filename=tryhow_js_slideshow_auto -->
+            <div id="slideShowContainer">
+                <div class="mySlides fade">
+                    <img class="slidesImg" src="Images/Learn2Code1.jpg">
+                    <div class="text">
+                        <p>Learn2Code is a coding group initiated by the African
+                            Leadership College students to help young people learn programming languages easly and
+                            faster through providing various coding quizzes</p>
+                    </div>
+                </div>
+                <div class="mySlides fade">
+                    <img class="slidesImg" src="Images/Learn2code2.jpg">
+                    <div class="text">
+                        <p>SignUp to get an email notification everytime we post a new quiz of your prefered programming
+                            language choice. Feel free to contact us
+                            if you need any advice or want to give feedback.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Quiz section -->
+            <div class="QuizHeader">
+                <div id="backIcon">
+                    <i onclick="changeTitleBack()" class="fa fa-arrow-left"></i>
+                </div>
+
+                <div id="title">
+                    <p id="demo"></p>
+                    <p class="title">HTML5</p>
+                    <p class="title">CSS3</p>
+                    <p class="title">JavaScript</p>
+                </div>
+
+                <div id="nextIcon">
+                    <i  onclick="changeTitleNext()" class="fa fa-arrow-right"></i>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- side bar -->
+        <div id="sideBar">
+
+            <div id="userIcon">
+                <i class="fa fa-user"></i>
+            </div>
+
+            <div class="button">
+                <input id="loginButton" type="button" value="Login">
+                <input id="signUpButton" type="button" value="SignUp">
+            </div>
+
+            <div id="formContainer">
+            <h1>Contact us</h1>
+             <p>We'd love to hear from you!!</p>
+              <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
+              <label>Name:</label><br>
+              <input type="text" Name="name" value="">
+              <span class="error"><span>
+              <br><br>
+              <label>Email:</label><br>
+              <input type="text" name="email" value="">
+              <span><span>
+              <br><br>
+              <label>Message:</label><br>
+              <textarea name="message"></textarea>
+              <br><br>
+              <input class="submit" type="submit">
+              </form>
+    
+            </div>
+     
+        </div>
+        <?php
+              echo "you have successful submitted";
+       ?>
+    </div>
+   
+    
+<script type="text/javaScript" src="index.js">
+</script>
+
+</body>
+
+</html>
