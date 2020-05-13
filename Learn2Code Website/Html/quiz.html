@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Learn2Code</title>
+    <meta charset="utf8">
+    <link rel="stylesheet" type="text/css" href="../index.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+
+
+<body>
+    <div id="container">
+
+        <div id="part1">
+            <header id="header">
+                <div id="logo" class="col">
+                    <img src="../Images/logo1.png">
+                </div>
+
+                <div id="search" class="col">
+                    <input type="text" placeholder="eg: HTML Quiz 1">
+                    <i class="fa fa-search"></i>
+
+                </div>
+            </header>
+            <nav>
+                <div class="navbar">
+                    <a href="../index.php">Home</a>
+                    <a href="../index.php">About us</a>
+                    <a href="">Quiz</a>
+                    <a href="../index.php">Contact us</a>
+                </div>
+            </nav>
+
+            <div class="quiz-container">
+                <div class="question-number">
+                    <h3>Question <span class="question-num-value"> </span> of <span class="total-question"></span></h3>
+                </div>
+                <div class="question">
+                </div>
+                <div class="options">
+                    <div id="0" class="options1" onclick="check(this)"></div>
+                    <div id="1" class="options2" onclick="check(this)"></div>
+                    <div id="2" class="options3" onclick="check(this)"></div>
+                    <div id="3" class="options4" onclick="check(this)"></div>
+                </div>
+                <div class="feedback" id="feedback">
+
+                </div>
+                <div class="button">
+                    <button type="button" class="btn" onclick="next()">Next</button>
+                </div>
+
+
+                <div class="answers-tracker">
+
+                </div>
+
+
+                <div class="quiz-over">
+                    <div class="box">
+                        <h1>Good Try!<br>
+                            You Got <span class="correct-answers"></span>out of <span class="total-question2"></span>
+                            answers
+                            correct! <br>
+                            That's <span class="percentage"></span>
+                        </h1>
+                        <button type="button" onclick="tryAgain()">TryAgain</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <div id="sideBar">
+
+            <div id="userIcon">
+                <i class="fa fa-user-circle"></i>
+            </div>
+
+            <div class="button">
+                <input id="loginButton" type="button" value="Login">
+                <input id="signUpButton" type="button" value="SignUp">
+            </div>
+
+            <div id="formContainer">
+                <h1>Contact us</h1>
+                <!--  prints the message when the user have submitted the form -->
+                <span class="msg"><?php echo $name.$response;?></span>
+                <p>We'd love to hear from you!!</p>
+                <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
+                    <label>Name:</label><br>
+                    <input type="text" Name="name" value="">
+
+                    <br><br>
+                    <label>Email:</label><br>
+                    <input type="text" name="email" value="">
+                    <span><span>
+                            <br><br>
+                            <label>Message:</label><br>
+                            <textarea name="message"></textarea>
+                            <br><br>
+                            <p class="gender">Gender:</p>
+                            <input type="radio" id="male" name="gender" value="male">
+                            <label for="male">Male</label><br>
+                            <input type="radio" id="female" name="gender" value="female">
+                            <label for="female">Female</label><br>
+                            <input type="radio" id="other" name="gender" value="other">
+                            <label for="other">Other</label>
+                            <br><br>
+                     <input class="submit" type="submit">
+                </form>
+
+            </div>
+        </div>
+
+    </div>
+
+
+
+    <script type="text/javaScript" src="../JavaScript/quiz.js"></script>
+</body>
+
+</html>
