@@ -1,25 +1,25 @@
  
  body,html{
-   margin: 0;
+   margin: 0;/* no space outside the body or html */
    font-family: Verdana, sans-serif;;
  }
   
   /* container */
  #container{
      display: flex;
-     flex-direction: row-reverse;
-     height: 100vh;
+     flex-direction: row-reverse;  /*the items will be ordered opposite way as the text direction */
+     height: 100vh;  /* height according to the view height */
      
  }
     /* page-content */
  #part1{
-     flex-basis: 75%;
+     flex-basis: 75%; /* the div part1 of the container should take 75% width of the container*/
       
  }
      /* header */
  header{
-     display: flex;
-     align-items: center;
+     display: flex; /* put the header children on the same line  */
+     align-items: center; /* align vertically the content at the center*/
      height: 10vh;
      
     
@@ -28,7 +28,7 @@
  }
     /* header column */
  header .col{
-    flex: 1;
+    flex: 1; /* the space of the header is divided equally among it's children*/
      
 }
 
@@ -41,7 +41,7 @@ header img{
       /* header logo */
 header #logo{
     text-align: center;
-    position: absolute;
+    position: absolute; /*  position the header logo left based on its parent */
     left: 26%;
    
 }
@@ -59,14 +59,14 @@ header #search input{
 }
       /* removing borders on the search input */
 input:focus{
-    outline: none;
+    outline: none; /* when clicked, remove the line drawn outside the input*/
 }
  
       /* search icon */
 header .fa-search{
      position: absolute ;
      left: 76%;
-     margin-top: 0.5%;
+     margin-top: 0.5%; /* increase the top space outside the div by 0.5% */
      
 }
 
@@ -86,16 +86,28 @@ header .fa-search{
    
      /* login button, signup button  */
  #loginButton, #signUpButton{
- border-radius: 25px;
- width: 25%;
- background-color: white;
- border-color: black;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor:pointer;
+    background-color:white;
+    font-size:18px;
+    font-weight: bolder;
+    color:black;
+    border:none;
+   
  } 
+
+#signUpButton{
+    margin-left: 60px;
+}
+ #loginButton{
+    margin-right: 60px;
+ }
  
    /* Slideshow container */
     
 #slideShowContainer{
- position: relative;  
+ position: relative;  /* positioning the slideShowContainer based of its normal position */
  top: -9px;
 
     
@@ -103,15 +115,15 @@ header .fa-search{
  /* the overlay of the images */
 .mySlides{
  background-color: black;
- opacity: 0.9;
- height: 350px;
+ opacity: 0.9; /* The maximum opacity being 1 */
+ height: 300px;
 }
-/* slidesImages  */
+/* style slidesImages  */
 .slidesImg{
     opacity: 0.4;
     width:100% ;
-    height:350px; 
-    object-fit: cover;
+    height:300px; 
+    object-fit: cover; 
 }
  
      /* mySLides Text */
@@ -122,8 +134,8 @@ header .fa-search{
     position: absolute;
     top:50%;
     left: 50%;
-    transform: translate(-50%, -50%);
-}
+   transform: translate(-50%, -50%);  /* reposition horizontally -50% and vertically:-50% */   
+} 
    /* Quiz header  */
 .QuizHeader{
   display:flex;
@@ -149,11 +161,12 @@ header .fa-search{
 }
 
         /* form */
+ 
 #formContainer{
     background-color:white;
     position: absolute;
     top:200px;
-    height: 500px;
+    height: 535px;
     width: 350px;
     border-radius: 15px;
     left: 20px;
@@ -161,59 +174,369 @@ header .fa-search{
     
 }
 
+   /* reduce the size of the formContainer */
 #formContainer p{
     font-size: 15px;
-
-}
- 
-form label, form input,form textarea{
-position: absolute;
-left:30px;
-
 }
 
-form input {
-   width: 80%;
-   margin-top: 10px;
-  
+ /* styling the label, input, textarea, and gender radio button for the form */
+form label, form input,form textarea, .gender{
+float:left; 
+margin-left:30px;
+margin-top: 10px;
+
 }
+
+ /* to change the width, height, background-color for the form input type of submit */
 form input[type=submit] {
-    width: 80%; 
+    padding: 15px 50px;
+    border-radius: 5px;
+    cursor:pointer;
     background-color:#4863A0;
-    height: 40px;
-    margin-top: 90px;
-
+    font-size:18px;
+    color:#ffffff;
+    border:none;
+    font-weight: bolder;
+    display: inline-block;
+    margin: 25px 80px; /*increase the outside top space of the submit input */
+      
  }
 
+  /* to increase the width of the input of type text */
+ form input[type=text]{
+     width: 80%;
+ }
+   
+   /* to increase the width and height of the textarea of the form */
 form textarea{
     width: 80%;
-    margin-top: 10px;
     height: 100px;
   
 }
-
+    /* changing the color of the message that's shown after submitting the form */
 .msg{
     color: red;
-     
+}
 
+  /* styling the button when clicked display the quiz */
+.quizButton{
+    position: absolute; /* positioning the div based on its parent which is the div part1*/
+    left: 55%;
+    top: 46%;
+    height: 50px;
+    cursor:pointer;   /*add some interaction and call the user to an action */
+    width: 150px;
+    border-radius: 25px; /* curving the radius of the quiz button border*/
+    text-align: center;
+    background-color: #4863A0;
+    font-size: 15px;
+    text-decoration: none; /* removing the line on the text */
+    color: white;
+    font-weight: bolder; 
+}
+
+.socialMedia{
+    display:flex; /* align the social media paragraphs on the same line*/
+    text-align: center;
+    position: relative; /* adding some space to the  top based on its normal position*/
+    top:30px;
+    height:40px;
+    background-color:#4863A0 ;
+    color: white;
+}
+
+  /* styling the icon  */
+.fa-youtube, .fa-facebook-f, .fa-twitter{
+    color: white;
+    position: relative; /*adding some space to the right based on its normal position */
+    right: 5px;
+    
+}
+.socialMedia p{
+    flex: 1;   /* the space in the social media container will be divided equally */
+    align-self: center; /*align the items vertically in the center */
+}
+
+.address{
+    display: flex;  /* displays the address div inline */
+    position: relative;
+    top:30px;
+}
+
+.address ul{
+    flex: 1;  
+}
+
+
+ul li{
+    list-style-type: none; /* to remove any style of the list like bullet points */
+}
+ul li a {
+    text-decoration: none;
+    color: black;
+}
+
+footer .copyright{
+    margin-top: -2px;
+    text-align: center;
+    
 }
 
 
 
+    /* This helps to style the head 1 for container that shows what Learn2code quiz type */
+.typeQuiz h1{
+    text-align: center;
+    font-size: 20px;
+    font-weight: normal;
+    margin-bottom: 30px;
+}
+      
+.content{
+    display: flex;
+    text-align: center;
+}
+
+.content img{
+    flex: 1;
+    width: 300px;
+    height:70px;
+    object-fit: contain; /* this makes the image adjust to the height and width of the container */
+}
+
+
+/* Navbar container */
+.navbar {
+    display: flex;
+    justify-content: center; /* this helps align horizontally the nav bar content in the center */
+    overflow: hidden; /* when the content overflow the container size hide it */
+    background-color:#4863A0; 
+    width: 100%;
+    height: 40px;
+    margin-top:5px;
+    margin-bottom: -11px;
+  }
+  
+  /* Links inside the navbar */
+  .navbar a {
+    font-size: 16px;
+    color: white;
+    align-self: center;
+    padding: 14px 16px;
+    text-decoration: none;
+  }
+
+  /* Quizzzzz */
+
+*{
+    box-sizing: border-box; /* this makes the width of the quiz set be inclusive of the borders also*/
+}
+
+ /* styling the quiz container */
+.quiz-container{
+    max-width:700px; /* the width shouldn't be greater than 700px */
+    min-height:500px; /* the height shouldn't be less than 500px */
+    background-color: #ffffff;
+    margin: 20px auto; /* the space outside the quiz container. At the top/bottom:20px and left/right: center */
+    border-radius:10px;
+    padding:30px /* the space inside the quiz container should increase by 30px*/
+
+}
+
+ /* styling the container before and after the content */
+.quiz-container::after, .quiz-container::before{
+  content:''; /* sets the content to nothing */
+  clear:both; /* not allowing floating element on the left or right*/
+  display:table; /* display the quiz container children behave as if they are in a cell*/
+}
  
+ /* styling the h3 of the question number div */
+.question-number h3{
+    color:#4863A0;
+    border-bottom: 1px solid #cccccc; /* adding some space to the bottom border*/
+    margin:0;
+    padding-bottom: 10px ;
+}
+  /* styling the questions */
+.question{
+    font-size:22px;
+    color:#000000;
+    padding:15px 0;
+    margin-bottom:5px;
+}
+  /* styling each options  */
+.options div{
+ background-color:#cccccc;
+ font-size:16px;
+ color: #000000;
+ margin-bottom:10px;
+ border-radius:5px;
+ padding:15px;
+ position: relative;  /*option div will be the parent */
+ overflow: hidden; /* When the options content overides the container size, it should be hidden */
+ cursor:pointer; /* add some interaction and show the user an action */
+}
 
+.options div.disabled{
+    pointer-events: none ; /*  when the option has a disabled class, it won't react to the mouse/touch events */
+}
 
+.options div.correct{
+    z-index:1; /* this will make the stack order for the option div with correct class comes first*/ 
+    color:#fff;
+}
 
+ /* styling the options div with a correct class before the insert of content /* the stack order comes last/ */
+.options div.correct::before{ 
+    content: ''; 
+    position:absolute;
+    left:0;
+    top:0;
+    width:100%;
+    height:100%; 
+    background-color:green;
+    z-index:-1; /* the stack order comes last*/
+    transform:translateX(-100%); /* repostion an element horizontally*/
+    animation: animateBackground 1s ease; /* the animationBackground should delay 1s whereby it has a slow start and then fast */
+    animation-fill-mode: forwards; /* the div element retain the style values from the last keyframe when the animation ends */
+}
+ /* styling the options div with a wrong class */
+.options div.wrong{
+    z-index:1;
+    color:#fff;
 
+}
  
+  /* styling the options div with a wrong class before the content */
+.options div.wrong::before{
+    content: '';
+    position:absolute;
+    left:0;
+    top:0;
+    width:100%;
+    height:100%; 
+    background-color:red;
+    z-index:-1;
+    transform:translateX(-100%); 
+    animation: animateBackground 1s ease;
+    animation-fill-mode: forwards;
+}
 
+@keyframes animateBackground{
+    0%{
+        transform:translateX(-100%); /* the first keyframe where by it horizontally reposition it self -100%*/
+    }
 
- 
- 
+    100%{
+        transform:translateY(0%); /*the second keyframe where it vertically repostition itseft 0%*/
+    }
+}
 
- 
+ /* styling the button for next */
+button.btn{
+ padding: 15px 50px;
+ border-radius: 5px;
+ cursor:pointer;
+ background-color:#4863A0;
+ font-size:18px;
+ color:#ffffff;
+ font-weight: bolder;
+ border:none;
+ display: inline-block;
+ margin:15px 0 20px;
+}
+ /* styling the answeer tracker div*/
+.answers-tracker{
+    border-top:1px solid #ccc;
+    padding-top:10px;
+    float:left;
+    width:100%;
+}
+/* styling each  question answer tracker */
+.answers-tracker div{
+    height:40px;
+    width:40px;
+    background-color:#cccccc;
+    display:inline-block;
+    border-radius:50%;
+    margin-right:5px;
+}
 
+/* source for png: https://www.flaticon.com/free-icon/check_1828743?term=correct&page=1&position=1 */
+.answers-tracker div.correct{
+    background-color: green;
+    background-image: url('Images/correct.png');/* insert the images as a background*/
+    background-position: center; /*position the image at the center*/
+    background-repeat:no-repeat; /* avoid the image from repeating*/
+    background-size:50%; /*the size of the image should be 50%*/
+}
 
- 
+.answers-tracker div.wrong{
+    background-color: green;
+    background-image: url('Images/wrong.png');
+    background-position: center;
+    background-repeat:no-repeat;
+    background-size:50%;
+}
+ /*styling the answer tracker div with a wrong classs*/
+.answers-tracker div.wrong{
+    background-color: red;
+}
 
+ /*styling quizover div*/
+.quiz-over{
+    position:fixed;  /*positioned relative to the viewport and remains at the same page even if the page is scrolled*/
+    left:0;
+    top:0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.9);
+    z-index: 10;  /*overrides all the css in the stack order */
+    display: none; 
+    align-items:center; /* align vertically the quiz over div at the center */
+    justify-content: center; /* align horizontally the quiz over div at the center */
 
+}
+
+.quiz-over.show{
+   display: flex;
+}
+
+ /* styling the quizOver box  */
+.quiz-over .box{
+    background-color:#4863A0;
+    padding: 30px;
+    border-radius:10px;
+    text-align:center;
+    flex-basis:700px;
+    max-width:700px;
+    color: #ffffff;
+}
+ /* styling the quiz over box h1  */
+.quiz-over .box h1{
+    font-size:36px;
+    margin:0 0 20px;
+}
+/* styling the try again button */
+.quiz-over .box button{
+    padding: 15px 50px;
+    border:none;
+    background-color: #ff9800;
+    border-radius: 5px;
+    font-size:16px;
+    margin:15px 0 20px;
+    color: #ffffff;
+}
+
+  /* this helps display and align the feedback div */
+.feedback{
+    margin-top: 15px;
+    display:block;
+}
+  /* this helps to not display the feedback */
+.feedback.close{
+    display:none;
+}
+  
+
+  
